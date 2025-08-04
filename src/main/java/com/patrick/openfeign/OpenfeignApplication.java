@@ -16,11 +16,4 @@ public class OpenfeignApplication {
 		SpringApplication.run(OpenfeignApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner commandLineRunner(ViaCepClient viaCepClient) {
-		return args -> {
-			Endereco endereco = viaCepClient.obterEnderecoPorCep("41750200");
-			System.out.println(endereco);
-		};
-	}
 }
