@@ -1,25 +1,19 @@
 package com.patrick.openfeign.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Endereco {
 
     private String cep;
     private String estado;
-
-    @JsonProperty("localidade")
-    private String cidade;
+    private String localidade;
     private String bairro;
+    private String logradouro;
 
-    @JsonProperty("logradouro")
-    private String rua;
-
-    public Endereco(String cep, String estado, String cidade, String bairro, String rua) {
+    public Endereco(String cep, String estado, String localidade, String bairro, String logradouro) {
         this.cep = cep;
         this.estado = estado;
-        this.cidade = cidade;
+        this.localidade = localidade;
         this.bairro = bairro;
-        this.rua = rua;
+        this.logradouro = logradouro;
     }
 
     public String getCep() {
@@ -38,12 +32,12 @@ public class Endereco {
         this.estado = estado;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getLocalidade() {
+        return localidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setLocalidade(String localidade) {
+        this.localidade = localidade;
     }
 
     public String getBairro() {
@@ -54,22 +48,11 @@ public class Endereco {
         this.bairro = bairro;
     }
 
-    public String getRua() {
-        return rua;
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    @Override
-    public String toString() {
-        return "Endereco{" +
-                "cep='" + cep + '\'' +
-                ", estado='" + estado + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", bairro='" + bairro + '\'' +
-                ", rua='" + rua + '\'' +
-                '}';
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 }
